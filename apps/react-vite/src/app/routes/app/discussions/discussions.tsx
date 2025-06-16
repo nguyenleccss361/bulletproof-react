@@ -6,6 +6,7 @@ import { getInfiniteCommentsQueryOptions } from '@/features/comments/api/get-com
 import { getDiscussionsQueryOptions } from '@/features/discussions/api/get-discussions';
 import { CreateDiscussion } from '@/features/discussions/components/create-discussion';
 import { DiscussionsList } from '@/features/discussions/components/discussions-list';
+import { useUsers } from '@/features/users/api/get-users';
 
 export const clientLoader =
   (queryClient: QueryClient) =>
@@ -24,6 +25,11 @@ export const clientLoader =
 
 const DiscussionsRoute = () => {
   const queryClient = useQueryClient();
+
+  const usersQuery = useUsers();
+  const users = usersQuery.data?.data;
+  console.log('users', users);
+
   return (
     <ContentLayout title="Discussions">
       <div className="flex justify-end">

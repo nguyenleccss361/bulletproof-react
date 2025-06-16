@@ -33,6 +33,18 @@ export const clientLoader =
       discussion,
       comments,
     };
+
+    // const criticalData =
+    //   queryClient.getQueryData(discussionQuery.queryKey) ??
+    //   (await queryClient.fetchQuery(discussionQuery));
+    // const nonCriticalData =
+    //   queryClient.getQueryData(commentsQuery.queryKey) ??
+    //   (await queryClient.fetchInfiniteQuery(commentsQuery));
+
+    // return {
+    //   criticalData,
+    //   nonCriticalData,
+    // };
   };
 
 const DiscussionRoute = () => {
